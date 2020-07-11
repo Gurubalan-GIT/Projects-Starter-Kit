@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <Navbar />
     <List v-bind:todos="todos" v-on:delete-task="deleteTask"/>
   </div>
 </template>
 
 <script>
 import List from './components/List';
+import Navbar from './layouts/Navbar';
 export default {
   name: 'App',
   components: {
-    List
+    List,
+    Navbar
   },
   data(){
     return {
