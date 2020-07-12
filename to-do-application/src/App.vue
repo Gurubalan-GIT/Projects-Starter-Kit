@@ -10,6 +10,7 @@
 import List from './components/List';
 import Navbar from './layouts/Navbar';
 import AddTask from './components/AddTask';
+import { getData } from "./api/tasks";
 export default {
   name: 'App',
   components: {
@@ -19,23 +20,7 @@ export default {
   },
   data(){
     return {
-      todos : [
-        {
-          id: 1,
-          title: "One",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "two",
-          completed: true
-        },
-        {
-          id: 3,
-          title: "Three",
-          completed: false
-        },
-      ]
+      todos : []
     }
   },
   methods: {
@@ -46,6 +31,11 @@ export default {
       this.todos = [...this.todos, task]
     }
   },
+  created(){
+    getData()
+      .then(res => this.todos = res.data)
+      .catch(err => console.log(err))
+  }
 }
 </script>
 
