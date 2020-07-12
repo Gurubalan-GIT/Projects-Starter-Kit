@@ -42,7 +42,7 @@ This is a collaborative open source repository for project starters / helpers fr
 
     - [x] Complete the [Read-me.md](/README.md) documentation.
 
-    - [] Add all the contributors and add them to [contributers](/contributing.md/#contributers) in the [contributing.md](/contributing.md) documentation.
+    - [ ] Add all the contributors and add them to [contributers](/contributing.md/#contributers) in the [contributing.md](/contributing.md) documentation.
 
     - [x] Create the file structure boiler plate to start pushing code.
 
