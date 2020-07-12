@@ -1,5 +1,5 @@
-# to-do-application
-
+# To Do Application
+A simple todo application to help you get started with Vue JS. Data used here is sampled from [JSONPlaceHolderAPI](https://jsonplaceholder.typicode.com/).
 ## Project setup
 ```
 npm install
