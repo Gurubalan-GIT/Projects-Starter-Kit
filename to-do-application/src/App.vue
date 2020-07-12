@@ -10,7 +10,7 @@
 import List from './components/List';
 import Navbar from './layouts/Navbar';
 import AddTask from './components/AddTask';
-import { getData } from "./api/tasks";
+import { getData, addTask, deleteTask } from "./api/tasks";
 export default {
   name: 'App',
   components: {
@@ -25,10 +25,16 @@ export default {
   },
   methods: {
     deleteTask(id){
-      this.todos = this.todos.filter((todo) => todo.id !== id)
+      deleteTask(id)
+        // eslint-disable-next-line no-unused-vars
+        .then(res => this.todos = this.todos.filter((todo) => todo.id !== id))
+        .catch(err => console.log(err))
     },
     addTask(task){
-      this.todos = [...this.todos, task]
+      const { title, completed } = task;
+      addTask(title, completed)
+        .then(res => this.todos = [...this.todos, res.data])
+        .catch(err => console.log(err))
     }
   },
   created(){

@@ -19,7 +19,6 @@ export default {
         addTask(e){
             e.preventDefault();
             const task = {
-                id: 4,
                 title: this.task,
                 completed: false 
             }
