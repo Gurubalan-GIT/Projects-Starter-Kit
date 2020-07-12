@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navbar />
+    <AddTask v-on:add-task="addTask"/>
     <List v-bind:todos="todos" v-on:delete-task="deleteTask"/>
   </div>
 </template>
@@ -8,11 +9,13 @@
 <script>
 import List from './components/List';
 import Navbar from './layouts/Navbar';
+import AddTask from './components/AddTask';
 export default {
   name: 'App',
   components: {
     List,
-    Navbar
+    Navbar,
+    AddTask
   },
   data(){
     return {
@@ -38,6 +41,9 @@ export default {
   methods: {
     deleteTask(id){
       this.todos = this.todos.filter((todo) => todo.id !== id)
+    },
+    addTask(task){
+      this.todos = [...this.todos, task]
     }
   },
 }
